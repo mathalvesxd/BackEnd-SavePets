@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registro de Usuário</title>
+</head>
+<body>
+  <h1>Registro de Usuário</h1>
+  <form action="/register" method="post" enctype="multipart/form-data">
+    <label for="name">Nome:</label>
+    <input type="text" name="name" id="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" required>
+
+    <label for="password">Senha:</label>
+    <input type="text" name="password" id="password" required>
+
+    <label for="address">Endereço:</label>
+    <input type="text" name="address" id="address" required>
+
+    <label for="phone">Número de Telefone:</label>
+    <input type="tel" name="phone" id="phone" required>
+
+    <label for="gender">Sexo:</label>
+    <select name="gender" id="gender" required>
+      <option value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+      <option value="Outro">Outro</option>
+    </select>
+
+    <label for="profilePicture">Foto de Perfil:</label>
+    <input type="file" name="profilePicture" id="profilePicture" required>
+
+    <button type="submit">Registrar</button>
+  </form>
+</body>
+</html>
