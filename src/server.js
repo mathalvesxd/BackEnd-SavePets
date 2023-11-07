@@ -11,10 +11,12 @@ const server = express();
 const sequelize = require('./database/mysql');
 const RegisterController = require('./controllers/RegisterController');
 const User = require('./models/User'); // Adicione esta linha
+const petRoutes = require('./routers/pet');
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(path.join(__dirname, '../public')));
 server.use(routerauth);
+server.use(petRoutes);
 
 // Roteie a solicitação GET para "/register" para o arquivo HTML diretamente
 server.get('/register', (req, res) => {

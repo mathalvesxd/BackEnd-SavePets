@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes}  = require('sequelize');
 const sequelize = require('../database/mysql.js');
 
 // ...
@@ -33,11 +33,23 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  validated:{
+    type:DataTypes.TINYINT,
+    defaultValue:false
+  },
+  code:{
+    type:DataTypes.INTEGER,
+    unique:true
+  },
+
   profilePicture: {
     type: DataTypes.STRING,
     allowNull: false,
   },
 },{tableName:"user"});
+
+
+
 
 
 

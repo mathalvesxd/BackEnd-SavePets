@@ -1,6 +1,6 @@
 const  User  = require('../models/User'); // Certifique-se de importar o modelo de usuário adequado
 console.log('User model imported'); // Adicione este log após a importação do modelo User
-
+const generateRandomNumber = require('../helpers/randomNumber')
 
 const { validationResult } = require('express-validator');
 
@@ -12,7 +12,7 @@ const registerUser = async (req, res) => {
   }
 
   try {
-    const { name, email, password, address, phone, gender } = req.body;
+    const { name, email, password, address, phone, gender} = req.body;
 
     // Processar o upload da foto de perfil
     const profilePicture = req.file; // O campo de upload de arquivo deve ser chamado 'profilePicture' no formulário
@@ -36,6 +36,7 @@ const registerUser = async (req, res) => {
       address,
       phone,
       gender,
+      code: generateRandomNumber(),
       profilePicture: profilePicture ? profilePicture.filename : null,
     });
     res.json({ message: 'Usuário registrado com sucesso' });}
